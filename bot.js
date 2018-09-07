@@ -31,7 +31,7 @@ const w = ['./w1.png'];
                         ctx.fontSize = '20px';
                         ctx.fillStyle = "#f1f1f1";
                         ctx.textAlign = "center";
-                        ctx.fillText(`Welcome To S7Q Clan`, 300, 130);
+                        ctx.fillText(`Welcome To H BOT`, 300, 130);
                        
                         ctx.font = "bold 12px Arial";
                         ctx.fontSize = '20px';
@@ -70,7 +70,7 @@ function forEachObject(obj, func) {
 client.on("ready", () => {
     var guild;
     while (!guild)
-        guild = client.guilds.get("470653659114635275 ");
+        guild = client.guilds.get("470653659114635275");
     guild.fetchInvites().then((data) => {
         data.forEach((Invite, key, map) => {
             var Inv = Invite.code;
@@ -109,5 +109,10 @@ client.on("guildMemberAdd", (member) => {
     });
 });
 
-// THIS  MUST  BE  THIS  WAY
+client.on('ready', () => {
+     client.user.setActivity("S7Q 4Ever 亗",{type: 'WATCHING'});
+
+});
+
+
 client.login(process.env.BOT_TOKEN);
