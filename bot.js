@@ -286,6 +286,94 @@ client.on('message', Codes => {
 }
 });
 
+var prefix = "!";
+client.on("message", message => {
+
+            if (message.content.startsWith(prefix + "bc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' '); 
+  message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
+ m.send(`${argresult}\n ${m}`);
+})
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
+ message.delete(); 
+};     
+});
+
+ 
+
+ 
+
+ 
+
+
+
+
+
+  client.on('message', message => {
+    if(message.content.startsWith(prefix + 'move all')) {
+     if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send('**لايوجد لديك صلاحية سحب الأعضاء**');
+       if(!message.guild.member(client.user).hasPermission("MOVE_MEMBERS")) return message.reply("**لايوجد لدي صلاحية السحب**");
+    if (message.member.voiceChannel == null) return message.channel.send(`**الرجاء الدخول لروم صوتي**`)
+     var author = message.member.voiceChannelID;
+     var m = message.guild.members.filter(m=>m.voiceChannel)
+     message.guild.members.filter(m=>m.voiceChannel).forEach(m => {
+     m.setVoiceChannel(author)
+     })
+     message.channel.send(`**تم سحب جميع الأعضاء الي الروم الصوتي حقك.**`)
+
+
+     }
+       });
+
+
+
+client.on('message', message => {
+    if(message.content === '!'){
+        message.channel.send('**__Welcome__S7Q Clan..:champagne_glass:**')
+			                       
+    }
+});
+
+
+client.on('message', message => {
+    if(message.content === '!!'){
+        message.channel.send('***Welcome To __S7Q__Clan :champagne_glass::champagne_glass: ***')
+    }
+});
+
+
+client.on('message', message => {
+	var prefix = "ب";
+  if (message.author.codes) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  var command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+var args = message.content.split(" ").slice(1);
+
+  if (command == "ند") {
+               if(!message.channel.guild) return message.reply('** هذا الأمر لسيرفرات فقط **');
+         
+  if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("**انت لا تملك الصلاحيات المطلوبه**");
+  if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("** أنا لا أملك خاصيه  ` BAN_MEMBERS ` **");
+  let user = message.mentions.users.first();
+  
+  if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
+  if (!message.guild.member(user)
+  .bannable) return message.reply("**يجب ان تكون رتبة البوت اعلي من رتبه الشخص المراد تبنيدة**");
+
+
+  message.guild.member(user).ban(7, user);
+
+message.channel.send(`**✅ ${user.tag} banned from the server ! ✈ **  `)
+
+}
+}); 
+
+
 
 
 client.login(process.env.BOT_TOKEN);
