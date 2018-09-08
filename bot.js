@@ -115,12 +115,6 @@ client.on('ready', () => {
 });
 
 
-client.on("guildMemberAdd", (member) => {
-client.channels.get('470936933208686612').edit({name : `أعضاء السيرفر : ${member.guild.memberCount}`});
-})
-client.on("guildMemberRemove", (member) => {
-client.channels.get('470936933208686612').edit({name : `أعضاء السيرفر : ${member.guild.memberCount} `});
-})
 
 
  client.on('message', async message => {
