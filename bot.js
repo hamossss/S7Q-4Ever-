@@ -1696,5 +1696,12 @@ setInterval(function(){})
     }
 });
 
+client.on ("guildMemberAdd", member => {
+
+   var role = member.guild.roles.find ("name", "- S7Q .");
+   member.addRole (role);
+
+});
+
 
 client.login(process.env.BOT_TOKEN);
