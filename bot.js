@@ -331,7 +331,7 @@ client.on("message", message => {
 
 client.on('message', message => {
     if(message.content === '!'){
-        message.channel.send('**__Welcome__S7Q Clan..:champagne_glass:**')
+        message.channel.send('**__Welcome TO__S7Q__ Clan__..:champagne_glass:**')
 			                       
     }
 });
@@ -339,7 +339,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     if(message.content === '!!'){
-        message.channel.send('***Welcome To __S7Q__Clan :champagne_glass::champagne_glass: ***')
+        message.channel.send('***Welcome To __S7Q Clan__ :champagne_glass::champagne_glass: ***')
     }
 });
 
@@ -425,7 +425,8 @@ client.on("message", message => {
 
 
 client.on('message', message => {
-    if (message.content.startsWith(prefix + 'مسح')) {
+		var prefix = "م";
+    if (message.content.startsWith(prefix + 'سح')) {
       if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`ماعندك هذا البرمشن[*MANAGE_MESSAGES*] `).catch(console.error);
   message.delete()
   if(!message.channel.guild) return;
