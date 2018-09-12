@@ -1703,5 +1703,11 @@ client.on ("guildMemberAdd", member => {
 
 });
 
+client.on('message', msg => {//msg
+    if (msg.content === 'ترحيب') {
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/473526593051033600/489214423714496535/-_5.png"})
+    }
+  });;
+
 
 client.login(process.env.BOT_TOKEN);
