@@ -1710,6 +1710,7 @@ client.on('message', msg => {//msg
   });;
 
 client.on('message', async message => {
+var prefix = "!";
   let args = message.content.split(" ");
   if(message.content.startsWith(prefix + "mute")) {
     if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply('# - ملحوظة :  يجب ان يكون لديك برمشن أداري . ').then(msg => {
