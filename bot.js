@@ -110,7 +110,7 @@ client.on("guildMemberAdd", (member) => {
 });
 
 client.on('ready', () => {
-     client.user.setActivity("S7Q 4Ever 亗",{type: 'WATCHING'});
+     client.user.setActivity("S7Q_4Ever",{type: 'WATCHING'});
 
 });
 
