@@ -194,7 +194,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     if(message.content === 'الشعار'){
-        message.channel.send('``!S7Q |``')
+        message.channel.send('``- S7Q |``')
     }
 });
 
@@ -327,7 +327,7 @@ client.on("message", message => {
 
 client.on('message', message => {
     if(message.content === '!'){
-        message.channel.send('**__Welcome TO__S7Q__ Clan__..:champagne_glass:**')
+        message.channel.send('**:clan_s7q: __Welcome__ __TO__S7Q__ __ Clan__..:clan_s7q: **')
 			                       
     }
 });
@@ -335,7 +335,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     if(message.content === '!!'){
-        message.channel.send('***Welcome To __S7Q Clan__ :champagne_glass::champagne_glass: ***')
+        message.channel.send('***:clan_s7q: __Welcome To S7Q Clan__ :clan_s7q:  ***')
     }
 });
 
@@ -1720,7 +1720,7 @@ if (!message.content.startsWith(prefix)) return;
 	let command = message.content.split(" ")[0];
 	 command = command.slice(prefix.length);
 	let args = message.content.split(" ").slice(1);
-	if (command == "mute") {
+	if (command == "اسكت") {
 		if (!message.channel.guild) return;
 		if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply("انت لا تملك صلاحيات !! ").then(msg => msg.delete(5000));
 		if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;
@@ -1751,7 +1751,7 @@ ${message.author.tag} تمت معاقبتك بواسطة
 		.setColor("RANDOM")
 	user.send( muteembeddm);
   }
-if(command === `unmute`) {
+if(command === `تكلم`) {
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.sendMessage("**ليس لديك صلاحية لفك عن الشخص ميوت**:x: ").then(m => m.delete(5000));
 if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return message.reply("**ما عندي برمشن**").then(msg => msg.delete(6000))
 
