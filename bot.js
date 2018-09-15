@@ -4,6 +4,7 @@ const fs = require('fs');
 const moment = require('moment');
 const jimp = require('jimp');
 const Canvas = require('canvas');
+var prefix = "!";
  
 client.on('guildMemberAdd', member => {
      const welcomer =  member.guild.channels.find('name', 'chat');
@@ -306,6 +307,7 @@ client.on("message", message => {
 
 
   client.on('message', message => {
+	  var prefix = "!";
     if(message.content.startsWith(prefix + 'move all')) {
      if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send('**لايوجد لديك صلاحية سحب الأعضاء**');
        if(!message.guild.member(client.user).hasPermission("MOVE_MEMBERS")) return message.reply("**لايوجد لدي صلاحية السحب**");
