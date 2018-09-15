@@ -7,7 +7,7 @@ const Canvas = require('canvas');
 var prefix = "!";
  
 client.on('guildMemberAdd', member => {
-     const welcomer =  member.guild.channels.find('name', 'chat');
+     const welcomer =  member.guild.channels.find('name', 'welcome');
 const w = ['./w1.png'];
  
          let Image = Canvas.Image,
@@ -83,7 +83,7 @@ client.on("ready", () => {
  
  
 client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.get("490138378897981440");
+    let channel = member.guild.channels.get("490649498041843713");
     if (!channel) {
         console.log("!the channel id it's not correct");
         return;
